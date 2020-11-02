@@ -10,8 +10,20 @@ const MenuItemStyles = styled.div`
   justify-content: center;
   border: 1px solid black;
   margin: 0 7.5px 15px;
-  background-position: center;
-  background-size: cover;
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+
+    & .background-image {
+      transform: scale(1.1);
+      transition: transform 1s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+
+    & .content {
+      opacity: 0.9;
+    }
+  }
 
   &.large {
     height: 380px;
@@ -25,6 +37,14 @@ const MenuItemStyles = styled.div`
     margin-left: 7.5px;
   }
 
+  .background-image {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+
   .content {
     height: 90px;
     padding: 0 25px;
@@ -33,6 +53,10 @@ const MenuItemStyles = styled.div`
     align-items: center;
     justify-content: center;
     border: 1px solid black;
+
+    background-color: white;
+    opacity: 0.7;
+    position: absolute;
 
     .title {
       font-weight: bold;
@@ -51,12 +75,15 @@ const MenuItemStyles = styled.div`
 const MenuItem = ({ title, image, size }) => {
   console.log("Menu Item");
   return (
-    <MenuItemStyles
-      style={{ backgroundImage: `url(${image})` }}
-      className={size}
-    >
+    <MenuItemStyles className={size}>
+      <div
+        className="background-image"
+        style={{
+          backgroundImage: `url(${image})`,
+        }}
+      ></div>
       <div className="content">
-        <h1 className="title">{title}</h1>
+        <h1 className="title">{title.toUpperCase()}</h1>
         <span className="subtitle">SHOP NOW</span>
       </div>
     </MenuItemStyles>

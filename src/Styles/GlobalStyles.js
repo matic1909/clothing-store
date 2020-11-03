@@ -1,6 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+ :root {
+  --sub-color: grey;
+  --main-color: black;
+ }
+
   body {
   margin: 0;
   font-family: 'Open Sans Condensed';

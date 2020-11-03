@@ -6,6 +6,8 @@ const GlobalStyle = createGlobalStyle`
   font-family: 'Open Sans Condensed';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  padding: 20px 60px;
 }
 
 code {

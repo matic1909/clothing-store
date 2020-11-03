@@ -1,7 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import CollectionItem from './CollectionItem';
+import React from "react";
+import styled from "styled-components";
+import CollectionItem from "./CollectionItem";
 
 const CollectionPreviewStyles = styled.div`
   display: flex;
@@ -36,10 +35,5 @@ const CollectionPreview = ({ title, items }) => (
     </div>
   </CollectionPreviewStyles>
 );
-
-CollectionPreview.propTypes = {
-  title: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
 
 export default CollectionPreview;

@@ -6,6 +6,10 @@ const GlobalStyle = createGlobalStyle`
   --main-color: black;
  }
 
+ * {
+   box-sizing: border-box;
+ }
+
   body {
   margin: 0;
   font-family: 'Open Sans Condensed';

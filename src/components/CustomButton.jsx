@@ -17,6 +17,17 @@ const CustomButtonStyles = styled.button`
   border: none;
   cursor: pointer;
 
+  &.google-sign-in {
+    background-color: #4285f4;
+    color: white;
+
+    &:hover {
+      background-color: #357ae8;
+      color: white;
+      border: none;
+    }
+  }
+
   &:hover {
     background-color: white;
     color: black;
@@ -24,8 +35,13 @@ const CustomButtonStyles = styled.button`
   }
 `;
 
-const CustomButton = ({ children, ...otherProps }) => (
-  <CustomButtonStyles {...otherProps}>{children}</CustomButtonStyles>
+const CustomButton = ({ children, isGoogleSignIn, ...otherProps }) => (
+  <CustomButtonStyles
+    className={isGoogleSignIn ? "google-sign-in" : ""}
+    {...otherProps}
+  >
+    {children}
+  </CustomButtonStyles>
 );
 
 export default CustomButton;

@@ -3,13 +3,20 @@ import styled from "styled-components";
 import CustomButton from "./CustomButton";
 import FormInput from "./FormInput";
 
+import { signInWithGoogle } from "../firebase/firebase.utils";
+
 const SignInStyles = styled.div`
-  width: 30vw;
+  width: 380px;
   display: flex;
   flex-direction: column;
 
   .title {
     margin: 10px 0;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
   }
 `;
 
@@ -50,9 +57,12 @@ const SignIn = () => {
           handleChange={handleChange}
           required
         />
-        <CustomButton type="submit" value="Submit Form" onSubmit={handleSubmit}>
-          Sign In
-        </CustomButton>
+        <div className="buttons">
+          <CustomButton type="submit">Sign in</CustomButton>
+          <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+            Sign in with Google
+          </CustomButton>
+        </div>
       </form>
     </SignInStyles>
   );

@@ -1,6 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const CollectionItemStyles = styled.div`
   width: 22%;
@@ -44,12 +43,5 @@ const CollectionItem = ({ /* id, */ name, price, imageUrl }) => (
     </div>
   </CollectionItemStyles>
 );
-
-CollectionItem.propTypes = {
-  // id: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  imageUrl: PropTypes.string.isRequired,
-};
 
 export default CollectionItem;

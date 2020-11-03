@@ -1,7 +1,6 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { withRouter } from 'react-router-dom';
-import styled from 'styled-components';
+import React from "react";
+import { withRouter } from "react-router-dom";
+import styled from "styled-components";
 
 const MenuItemStyles = styled.div`
   min-width: 30%;
@@ -92,20 +91,6 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => {
       </div>
     </MenuItemStyles>
   );
-};
-
-MenuItem.propTypes = {
-  title: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string,
-  size: PropTypes.string,
-  history: PropTypes.objectOf(PropTypes.object).isRequired,
-  linkUrl: PropTypes.string.isRequired,
-  match: PropTypes.objectOf(PropTypes.string).isRequired,
-};
-
-MenuItem.defaultProps = {
-  imageUrl: '',
-  size: '',
 };
 
 export default withRouter(MenuItem);

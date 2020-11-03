@@ -10,6 +10,11 @@ const GlobalStyle = createGlobalStyle`
   padding: 20px 60px;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

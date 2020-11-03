@@ -1,6 +1,7 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
-import styled from "styled-components";
+import PropTypes from 'prop-types';
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import styled from 'styled-components';
 
 const MenuItemStyles = styled.div`
   min-width: 30%;
@@ -74,7 +75,6 @@ const MenuItemStyles = styled.div`
 `;
 
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => {
-  console.log("Menu Item");
   return (
     <MenuItemStyles
       className={size}
@@ -85,13 +85,27 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => {
         style={{
           backgroundImage: `url(${imageUrl})`,
         }}
-      ></div>
+      />
       <div className="content">
         <h1 className="title">{title.toUpperCase()}</h1>
         <span className="subtitle">SHOP NOW</span>
       </div>
     </MenuItemStyles>
   );
+};
+
+MenuItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string,
+  size: PropTypes.string,
+  history: PropTypes.objectOf(PropTypes.object).isRequired,
+  linkUrl: PropTypes.string.isRequired,
+  match: PropTypes.objectOf(PropTypes.string).isRequired,
+};
+
+MenuItem.defaultProps = {
+  imageUrl: '',
+  size: '',
 };
 
 export default withRouter(MenuItem);

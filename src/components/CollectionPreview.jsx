@@ -1,6 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import CollectionItem from "./CollectionItem";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import CollectionItem from './CollectionItem';
 
 const CollectionPreviewStyles = styled.div`
   display: flex;
@@ -18,17 +19,27 @@ const CollectionPreviewStyles = styled.div`
   }
 `;
 
-const CollectionPreview = ({ title, items, id }) => (
+const CollectionPreview = ({ title, items }) => (
   <CollectionPreviewStyles>
     <h1 className="title">{title.toUpperCase()}</h1>
     <div className="preview">
       {items
         .filter((item, index) => index < 4)
-        .map(({ id, ...itemProps }) => (
-          <CollectionItem key={id} {...itemProps} />
+        .map(({ id, name, price, imageUrl }) => (
+          <CollectionItem
+            key={id}
+            name={name}
+            price={price}
+            imageUrl={imageUrl}
+          />
         ))}
     </div>
   </CollectionPreviewStyles>
 );
+
+CollectionPreview.propTypes = {
+  title: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default CollectionPreview;

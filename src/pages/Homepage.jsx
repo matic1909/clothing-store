@@ -10,7 +10,7 @@ const HomePageStyles = styled.div`
 `;
 
 const HomePage = () => (
-  <HomePageStyles className="homepage">
+  <HomePageStyles>
     <Directory />
   </HomePageStyles>
 );

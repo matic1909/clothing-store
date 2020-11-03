@@ -2,8 +2,16 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'Open Sans Condensed'
-  }
+  margin: 0;
+  font-family: 'Open Sans Condensed';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
 `;
 
 export default GlobalStyle;

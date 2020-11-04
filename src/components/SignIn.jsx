@@ -3,7 +3,7 @@ import styled from "styled-components";
 import CustomButton from "./CustomButton";
 import FormInput from "./FormInput";
 
-import { signInWithGoogle } from "../firebase/firebase.utils";
+import { auth, signInWithGoogle } from "../firebase/firebase.utils";
 
 const SignInStyles = styled.div`
   width: 380px;
@@ -26,9 +26,17 @@ const SignIn = () => {
     password: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoginForm({ email: "", password: "" });
+
+    const { email, password } = loginForm;
+
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      setLoginForm({ email: "", password: "" });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleChange = (e) => {

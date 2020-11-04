@@ -40,7 +40,7 @@ const SignIn = () => {
     <SignInStyles>
       <h2>I already have an account</h2>
       <span>Sign in with your email and password</span>
-      <form>
+      <form onSubmit={handleSubmit}>
         <FormInput
           name="email"
           type="email"

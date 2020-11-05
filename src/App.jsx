@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import SignInAndSignUpPage from "./pages/signInSignUp";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import contactPage from "./pages/contact";
 
 function App({ currentUser, setCurrentUser }) {
   useEffect(() => {
@@ -35,6 +36,7 @@ function App({ currentUser, setCurrentUser }) {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/shop" component={ShopPage} />
+        <Route path="/contact" component={contactPage} />
         <Route
           exact
           path="/signin"
